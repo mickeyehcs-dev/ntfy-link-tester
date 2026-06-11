@@ -1,4 +1,5 @@
-from workers import WorkerEntrypoint, Response, fetch
+# 1. Added 'Request' to the imports list
+from workers import WorkerEntrypoint, Response, fetch, Request
 from urllib.parse import urlparse, parse_qs
 
 class Default(WorkerEntrypoint):
@@ -20,11 +21,16 @@ class Default(WorkerEntrypoint):
         message_body = f"Someone opened your link via: {click_source}."
 
         try:
-            await fetch(ntfy_url, {
-                "method": "POST",
-                "headers": ntfy_headers,
-                "body": message_body
-            })
+            # 2. Wrap the configuration into a single Request object
+            ntfy_request = Request(
+                ntfy_url,
+                method="POST",
+                headers=ntfy_headers,
+                body=message_body
+            )
+            
+            # 3. Pass just the single Request object to fetch
+            await fetch(ntfy_request)
             
             html_response = """
             <html>

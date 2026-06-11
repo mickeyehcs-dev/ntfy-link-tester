@@ -8,7 +8,7 @@ class Default(WorkerEntrypoint):
         click_source = params.get("source", ["Direct GitHub Deploy"])
 
         # 🚨 REPLACE THIS with your actual secret ntfy topic name!
-        ntfy_url = "https://ntfy.sh"
+        ntfy_url = "https://ntfy.sh/mickeyehcsserver"
         
         ntfy_headers = {
             "Title": "🔗 Link Opened!",

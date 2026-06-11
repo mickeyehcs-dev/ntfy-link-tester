@@ -11,7 +11,7 @@ class Default(WorkerEntrypoint):
             if path == "/favicon.ico":
                 return Response("", status=204)
 
-            ntfy_url = "https://ntfy.sh"
+            ntfy_url = "https://ntfy.sh/mickeyehcsserver"
             status_message = ""
 
             # 2. Handle Form Submission (POST request from the web page)

@@ -23,7 +23,7 @@ class Default(WorkerEntrypoint):
 
                 if user_content.strip():
                     ntfy_headers = {
-                        "Title": "MICKEY SERVER",
+                        "Title": "MICKEY SERVER ALERT",
                         "Priority": "high",
                         "Tags": ""
                     }

@@ -23,9 +23,9 @@ class Default(WorkerEntrypoint):
 
                 if user_content.strip():
                     ntfy_headers = {
-                        "Title": "Website Input Received",
+                        "Title": "MICKEY SERVER",
                         "Priority": "high",
-                        "Tags": "memo,speech_balloon"
+                        "Tags": ""
                     }
                     
                     ntfy_request = Request(
